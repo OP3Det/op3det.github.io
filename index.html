@@ -49,45 +49,46 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">OpenMask3D 🛋<br />
-            <p class="title is-3 publication-title">Open-Vocabulary 3D Instance Segmentation </p>
+          <h1 class="title is-1 publication-title">OP3Det<br />
+            <p class="title is-3 publication-title">Towards 3D Objectness Learning in an Open World</p>
           </h1>          
 
-          <h1 class="title is-4" style="color: #5c5c5c;">NeurIPS 2023</h1>
+          <h1 class="title is-4" style="color: #5c5c5c;">NeurIPS 2025</h1>
 
           <div class="is-size-5 publication-authors">
+            <!-- <span class="author-block">
+              <a href="https://aycatakmaz.github.io/">Ay&#231;a Takmaz</a><sup>1*</sup>,</span> -->
             <span class="author-block">
-              <a href="https://aycatakmaz.github.io/">Ay&#231;a Takmaz</a><sup>1*</sup>,</span>
-            <span class="author-block">
-              <a href="https://elisabettafedele.github.io/">Elisabetta Fedele</a><sup>1*</sup>,
+              <a href="https://taichiliu.github.io/">Taichi Liu</a><sup>1</sup>,
             </span>
-            <br />
+            <!-- <br /> -->
             <span class="author-block">
-              <a href="https://studios.disneyresearch.com/people/bob-sumner/">Robert W. Sumner</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://people.inf.ethz.ch/pomarc/">Marc Pollefeys</a><sup>1,2</sup>,
+              <a href="https://scholar.google.com/citations?user=x_-kOjoAAAAJ&hl=zh-CN">Zhenyu Wang</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://federicotombari.github.io/">Federico Tombari</a><sup>3</sup>,
+              <a href="https://liux4189.github.io/">Ruofeng Liu</a><sup>3</sup>,
             </span>
             <span class="author-block">
-              <a href="https://francisengelmann.github.io/">Francis Engelmann</a><sup>1,3</sup>
+              <a href="https://guangwang.me/#/home">Guang Wang</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://people.cs.rutgers.edu/~dz220/">Desheng Zhang</a><sup>1</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block" style="margin-right: 1em;"><sup>1</sup>ETH Zürich</span>
-            <span class="author-block" style="margin-right: 1em;"><sup>2</sup>Microsoft</span>
-            <span class="author-block" style="margin-right: 1em;"><sup>3</sup>Google</span></br>
-            <span class="author-block" style="margin-right: 1em; font-size: 18px;"><sup>*</sup>Equal contribution</span>
+            <span class="author-block" style="margin-right: 1em;"><sup>1</sup>Rutgers University</span>
+            <span class="author-block" style="margin-right: 1em;"><sup>2</sup>Tsinghua University</span>
+            <span class="author-block" style="margin-right: 1em;"><sup>3</sup>Michigan State University</span>
+            <span class="author-block" style="margin-right: 1em;"><sup>4</sup>Florida State University</span>
+            <!-- <span class="author-block" style="margin-right: 1em; font-size: 18px;"><sup>*</sup>Equal contribution</span> -->
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="static/pdf/openmask3d.pdf"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -96,7 +97,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2306.13631"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -106,7 +107,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/OpenMask3D/openmask3d"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -128,10 +129,10 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="static/images/teaser.jpg" class="center"/>
+      <img src="static/images/example.png" class="center"/>
       <br><br>
-      <h2 class="subtitle has-text-centered">
-      <strong>OpenMask3D</strong> is a zero-shot approach to perform 3D instance segmentation with open-vocabulary queries.
+      <h2 class="subtitle has-text-centered" style="white-space: nowrap;">
+      <strong>OP3Det</strong> a class-agnostic open-world prompt-free 3D detector to detect any objects within 3D scenes
     </h2>
     </div>
   </div>
@@ -146,17 +147,21 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We introduce the task of open-vocabulary 3D instance segmentation.
-            Current approaches for 3D instance segmentation can typically only recognize object categories from a pre-defined closed set of classes that are annotated in the training datasets.
-            This results in important limitations for real-world applications where one might need to perform tasks guided by novel,
-            open-vocabulary queries related to a wide variety of objects.
-            Recently, open-vocabulary 3D scene understanding methods have emerged to address this problem by learning queryable features for each point in the scene.
-            While such a representation can be directly employed to perform semantic segmentation, existing methods cannot separate multiple object instances.
-            In this work, we address this limitation, and propose OpenMask3D, which is a zero-shot approach for open-vocabulary 3D instance segmentation.
-            Guided by predicted class-agnostic 3D instance masks, our model aggregates per-mask features via multi-view fusion of CLIP-based image embeddings.
-            Experiments and ablation studies on ScanNet200 and Replica show that OpenMask3D outperforms other open-vocabulary methods,
-            especially on the long-tail distribution. Qualitative experiments further showcase OpenMask3D's ability to segment
-            object properties based on free-form queries describing geometry, affordances, and materials.          
+            Recent advancements in 3D object detection and novel category detection have made significant progress, 
+            yet research on learning generalized 3D objectness remains insufficient. In this paper, 
+            we delve into learning open-world 3D objectness, which focuses on detecting <i>all</i> objects in a 3D scene, 
+            including novel objects unseen during training. Traditional closed-set 3D detectors struggle to generalize to open-world scenarios,
+            while directly incorporating 3D open-vocabulary models for open-world ability struggles with vocabulary expansion and semantic overlap. 
+            To achieve generalized 3D object discovery, we propose <strong>OP3Det</strong>, a class-agnostic <strong>O</strong>pen-World <strong>P</strong>rompt-free <strong>3</strong>D <strong>Det</strong>ector
+            to detect any objects within 3D scenes without relying on hand-crafted text prompts.
+            We introduce the strong generalization and zero-shot capabilities of 2D foundation models, utilizing both 2D semantic
+            priors and 3D geometric priors for class-agnostic proposals to broaden 3D object
+            discovery. Then, by integrating complementary information from point cloud
+            and RGB image in the cross-modal mixture of experts, <strong>OP3Det</strong> dynamically
+            routes uni-modal and multi-modal features to learn generalized 3D objectness.
+            Extensive experiments demonstrate the extraordinary performance of <strong>OP3Det</strong>,
+            which significantly surpasses existing open-world 3D detectors by up to 16.0% in
+            AR and achieves a 13.5% improvement compared to closed-world 3D detectors.
           </p>
         </div>
       </div>
@@ -164,7 +169,7 @@
     <!--/ Abstract. -->
 
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
+    <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Explanatory Video</h2>
         <video controls poster="static/images/explanatory_video_poster.jpeg">
@@ -172,289 +177,8 @@
           Your browser does not support the video tag.
         </video>
       </div>
-    </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-       
-        <h2 class="title is-3">Qualitative results</h2>
-    
-      <br>
-        <div class="content has-text-justified">
-          <p>
-            Using <i>OpenMask3D</i> you can perform free form queries which capture uncommon objects, affordances, object properties, geometry, materials, and states.
-          </p>
-        </div>
-        <h2 class="title is-4">Uncommon objects</h2>
-      </div>
-    </div>
-
-
-
-    <div class="columns is-centered">
-
-      <!-- Affordances 1 -->
-      <div class="column">
-        <div class="content">
-          
-          <img src="static/images/footrest.jpeg"
-            class="interpolation-image">
-            <center>
-            <p>
-              <i >footrest</i>
-            </p>
-          </center>
-        </div>
-      </div>
-      <!--/ Affordances 1 -->
-
-      <!-- Affordances 2 -->
-      <div class="column">
-        <div class="content">
-          
-          <img src="static/images/angel.jpeg"
-            class="interpolation-image">
-            <center>
-            <p>
-              <i >angel</i>
-            </p>
-          </center>
-        </div>
-      </div>
-    <!--/ Affordances 2 -->
+    </div> -->
   </div>
-
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-          <h2 class="title is-4">Affordances</h2>
-      </div>
-    </div>
-
-    <div class="columns is-centered">
-
-      <!-- Affordances 1 -->
-      <div class="column">
-        <div class="content">
-          
-          <img src="static/images/aff1.jpeg"
-            class="interpolation-image">
-            <center>
-            <p>
-              <i >“sit”</i>
-            </p>
-          </center>
-        </div>
-      </div>
-      <!--/ Affordances 1 -->
-
-      <!-- Affordances 2 -->
-      <div class="column">
-        <div class="content">
-          
-          <img src="static/images/aff2.jpeg"
-            class="interpolation-image">
-            <center>
-            <p>
-              <i >“wash”</i>
-            </p>
-          </center>
-        </div>
-      </div>
-    <!--/ Affordances 2 -->
-  </div>
-
-
-
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-          <h2 class="title is-4">Object properties</h2>
-      </div>
-    </div>
-
-    <div class="columns is-centered">
-
-      <!-- Affordances 1 -->
-      <div class="column">
-        <div class="content">
-          
-          <img src="static/images/color1.jpeg"
-            class="interpolation-image">
-            <center>
-            <p>
-              <i >“an orange pillow”</i>
-            </p>
-          </center>
-        </div>
-      </div>
-      <!--/ Affordances 1 -->
-
-      <!-- Affordances 2 -->
-      <div class="column">
-        <div class="content">
-          
-          <img src="static/images/color2.jpeg"
-            class="interpolation-image">
-            <center>
-            <p>
-              <i >“a yellow pillow”</i>
-            </p>
-          </center>
-        </div>
-      </div>
-    <!--/ Affordances 2 -->
-  </div>
-
-
-
-
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-          <h2 class="title is-4">Geometry</h2>
-      </div>
-    </div>
-
-    <div class="columns is-centered">
-
-      <!-- Affordances 1 -->
-      <div class="column">
-        <div class="content">
-          
-          <img src="static/images/geo1.jpeg"
-            class="interpolation-image">
-            <center>
-            <p>
-              <i >“a circular table” </i>
-            </p>
-          </center>
-        </div>
-      </div>
-      <!--/ Affordances 1 -->
-
-      <!-- Affordances 2 -->
-      <div class="column">
-        <div class="content">
-          
-          <img src="static/images/geo2.jpeg"
-            class="interpolation-image">
-            <center>
-            <p>
-              <i >“a rectangular table” </i>
-            </p>
-          </center>
-        </div>
-      </div>
-    <!--/ Affordances 2 -->
-  </div>
-
-
-
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-          <h2 class="title is-4">Materials</h2>
-      </div>
-    </div>
-
-    <div class="columns is-centered">
-
-      <!-- Affordances 1 -->
-      <div class="column">
-        <div class="content">
-          
-          <img src="static/images/mat1.jpeg"
-            class="interpolation-image">
-            <center>
-            <p>
-              <i >“a leather chair” </i>
-            </p>
-          </center>
-        </div>
-      </div>
-      <!--/ Affordances 1 -->
-
-      <!-- Affordances 2 -->
-      <div class="column">
-        <div class="content">
-          
-          <img src="static/images/mat2.jpeg"
-            class="interpolation-image">
-            <center>
-            <p>
-              <i >“a fabric chair” </i>
-            </p>
-          </center>
-        </div>
-      </div>
-    <!--/ Affordances 2 -->
-  </div>
-
-
-
-
-
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-          <h2 class="title is-4">States</h2>
-      </div>
-    </div>
-
-    <div class="columns is-centered">
-
-      <!-- Affordances 1 -->
-      <div class="column">
-        <div class="content">
-          
-          <img src="static/images/state1.jpeg"
-            class="interpolation-image">
-            <center>
-            <p>
-              <i >“a full garbage bin” </i>
-            </p>
-          </center>
-        </div>
-      </div>
-      <!--/ Affordances 1 -->
-
-      <!-- Affordances 2 -->
-      <div class="column">
-        <div class="content">
-          
-          <img src="static/images/state2.jpeg"
-            class="interpolation-image">
-            <center>
-            <p>
-              <i >“an empty garbage bin” </i>
-            </p>
-          </center>
-        </div>
-      </div>
-    <!--/ Affordances 2 -->
-  </div>
-
-
-
-<h2 class="title is-3">BibTeX</h2>
-<pre><code>
-@inproceedings{takmaz2023openmask3d,
-  title={{OpenMask3D: Open-Vocabulary 3D Instance Segmentation}},
-  author={Takmaz, Ay{\c{c}}a and Fedele, Elisabetta and Sumner, Robert W. and Pollefeys, Marc and Tombari, Federico and Engelmann, Francis},
-  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
-year={2023}
-}</code></pre>
-
 </section>
 
 <footer class="footer">
